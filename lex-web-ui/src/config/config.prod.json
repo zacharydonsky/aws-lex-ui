@@ -1,19 +1,19 @@
 {
   "cognito": {
-    "poolId": ""
+    "poolId": "us-east-1:ec13e8e5-e7da-45a5-99ec-294cde8bee82"
   },
   "lex": {
-    "botName": "WebUiOrderFlowers",
-    "initialText": "You can ask me for help ordering flowers. Just type \"order flowers\" or click on the mic and say it.",
+    "botName": "AmplelabsBot",
+    "initialText": "You can ask me for help to find a free meal. Just type \"find me a meal\"",
     "initialSpeechInstruction": "Say 'Order Flowers' to get started."
   },
   "polly": {
     "voiceId": "Salli"
   },
   "ui": {
-    "parentOrigin": "",
-    "pageTitle": "Order Flowers Bot",
-    "toolbarTitle": "Order Flowers"
+    "parentOrigin": "http://localhost:8080",
+    "pageTitle": "Amplelabs Bot",
+    "toolbarTitle": "Find me a meal"
   },
   "recorder": {
     "preset": "speech_recognition"

@@ -184,7 +184,7 @@ const configDefault = {
   recorder: {
     // if set to true, voice interaction would be enabled on supported browsers
     // set to false if you don't want voice enabled
-    enable: true,
+    enable: false,
 
     // maximum recording time in seconds
     recordingTimeMax: 10,
