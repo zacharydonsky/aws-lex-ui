@@ -60,8 +60,6 @@ export default {
   data() {
     return {
       hasButtonBeenClicked: false,
-      // url: 'https://maps.googleapis.com/maps/api/staticmap?zoom=18&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C100%20Queens%20Park,%20Toronto,%20ON%20M5S%202C6,%20Canada&key=AIzaSyCcrbPhKo7IkA_pani0HRrCNP2YthcSR-w',
-      // url: this.responseCard.imageUrl,
     };
   },
   computed: {

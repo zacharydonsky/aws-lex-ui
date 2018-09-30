@@ -73,7 +73,11 @@ const configDefault = {
     initialSpeechInstruction: 'Say "Order Flowers" to get started',
 
     // Lex initial sessionAttributes
-    sessionAttributes: {},
+    sessionAttributes: {
+      // GPS related
+      userPosition: null,
+      userAgent: navigator.userAgent,
+    },
 
     // controls if the session attributes are reinitialized a
     // after the bot dialog is done (i.e. fail or fulfilled)
@@ -110,7 +114,7 @@ const configDefault = {
   },
 
   ui: {
-    // TODO may want to move pageTitle out to LexApp or Page component
+    // TODO: may want to move pageTitle out to LexApp or Page component
     // title of HTML page added dynamically to index.html
     pageTitle: 'Order Flowers Bot',
 
@@ -316,6 +320,35 @@ export function mergeConfig(baseConfig, srcConfig, deep = false) {
     })
     // merge key values back into a single object
     .reduce((merged, configItem) => ({ ...merged, ...configItem }), {});
+}
+
+// GPS related
+function updateLexPosition(position) {
+  // eslint-disable-next-line
+  const sessionAttributes = configDefault.lex.sessionAttributes;
+  const positionObj = {
+    latitude: position.coords.latitude,
+    longitude: position.coords.longitude,
+    altitude: position.coords.altitude,
+    accuracy: position.coords.accuracy,
+    altitudeAccuracy: position.coords.altitudeAccuracy,
+    heading: position.coords.heading,
+    speed: position.coords.speed,
+  };
+  sessionAttributes.userPosition = JSON.stringify(positionObj);
+  // console.log("userPostion", sessionAttributes.userPosition);
+}
+
+if (navigator.geolocation) {
+  const geolocationOptions = {
+    enableHighAccuracy: false,
+    timeout: 30000,
+    maximumAge: 0,
+  };
+  const errorHandler = (err) => {
+    throw new Error(`Error when getCurrentPosition: ${err}`);
+  };
+  navigator.geolocation.getCurrentPosition(updateLexPosition, errorHandler, geolocationOptions);
 }
 
 // merge build time parameters
