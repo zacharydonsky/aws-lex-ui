@@ -5,7 +5,7 @@
   "lex": {
     "botName": "AmplelabsBot",
     "initialText": "You can ask me for help to find a free meal. Just type \"find me a meal\"",
-    "initialSpeechInstruction": "Say 'Order Flowers' to get started."
+    "initialSpeechInstruction": "Say 'Find me a meal' to get started."
   },
   "polly": {
     "voiceId": "Salli"

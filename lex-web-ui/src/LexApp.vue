@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       favIcon: getFavIcon(),
-      pageTitle: 'Order Flowers Bot',
+      pageTitle: 'AmpleLabs Bot',
     };
   },
 };
