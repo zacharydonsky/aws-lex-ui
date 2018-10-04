@@ -31,7 +31,8 @@ import Vuetify from 'vuetify';
 import Page from '@/components/Page';
 import { Loader as LexWebUi } from '@/lex-web-ui';
 
-import flowerLogo from '../node_modules/material-design-icons/maps/2x_web/ic_local_florist_white_18dp.png';
+import flowerLogo from '../node_modules/material-design-icons/maps/2x_web/ic_local_dining_white_18dp.png';
+// import flowerLogo from '../node_modules/material-design-icons/tableware-512.png';
 
 function getToolbarLogo() {
   // Search for logo image files in ../assets/

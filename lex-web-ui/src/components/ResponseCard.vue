@@ -1,18 +1,18 @@
 <template>
-  <v-card>
-    <v-card-title v-if="responseCard.title.trim()" primary-title class="red lighten-5">
+  <v-card flat>
+    <!-- v-card-title v-if="responseCard.title.trim()" primary-title class="red lighten-5">
       <span class="headline">{{responseCard.title}}</span>
     </v-card-title>
     <v-card-text v-if="responseCard.subTitle">
       <span>{{responseCard.subTitle}}</span>
-    </v-card-text>
+    </v-card-text -->
     <v-card-media
-      v-if="responseCard.imageUrl"
+      v-if="responseCard.imageUrl !== null"
       :src="imageUrl"
       contain
       height="33vh"
     ></v-card-media>
-    <v-card-actions
+    <!-- v-card-actions
       v-for="(button, index) in responseCard.buttons"
       v-bind:key="index"
       actions
@@ -26,17 +26,20 @@
       >
         {{button.text}}
       </v-btn>
-    </v-card-actions>
+    </v-card-actions -->
     <v-card-actions v-if="responseCard.attachmentLinkUrl">
+      <div style="align-items: center">
       <v-btn
+        outline
+        round color="primary" dark
         flat
-        class="red lighten-5"
         tag="a"
         v-bind:href="responseCard.attachmentLinkUrl"
         target="_blank"
       >
         Open Link
       </v-btn>
+      </div>
     </v-card-actions>
   </v-card>
 </template>
@@ -87,18 +90,19 @@ export default {
 <style scoped>
 .card {
   width: 75vw;
+  height: 100%;
   position: inherit; /* workaround to card being displayed on top of toolbar shadow */
-  padding-bottom: 0.5em;
+  padding-bottom: 0.0em;
 }
 .card__title {
-  padding: 0.5em;
-  padding-top: 0.75em;
+  padding: 0.0em;
+  padding-top: 0.0em;
 }
 .card__text {
   padding: 0.33em;
 }
 .card__actions.button-row {
   justify-content: center;
-  padding-bottom: 0.15em;
+  padding-bottom: 0.0em;
 }
 </style>
