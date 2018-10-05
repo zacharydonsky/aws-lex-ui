@@ -32,6 +32,7 @@ import Page from '@/components/Page';
 import { Loader as LexWebUi } from '@/lex-web-ui';
 
 import flowerLogo from '../node_modules/material-design-icons/maps/2x_web/ic_local_dining_white_18dp.png';
+import faviconLogo from '../node_modules/material-design-icons/maps/2x_web/ic_local_dining_black_18dp.png';
 // import flowerLogo from '../node_modules/material-design-icons/tableware-512.png';
 
 function getToolbarLogo() {
@@ -55,7 +56,8 @@ function getFavIcon() {
   const favIconRequireKey = favIconRequire.keys().pop();
   return (favIconRequireKey) ?
     favIconRequire(favIconRequireKey) :
-    flowerLogo;
+    // flowerLogo;
+    faviconLogo;
 }
 
 Vue.use(Vuex);

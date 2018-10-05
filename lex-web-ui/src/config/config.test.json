@@ -4,15 +4,15 @@
   },
   "lex": {
     "botName": "AmplelabsBot",
-    "initialText": "You can ask me for help to find a free meal. Just type \"find me a meal\"",
+    "initialText": "Hi I am Amplebot! I can help you to find a meal. Just type \"help\" if you are lost.",
     "initialSpeechInstruction": "Say 'Find me a meal' to get started."
   },
   "polly": {
-    "voiceId": "Salli"
+    "voiceId": "Matthew"
   },
   "ui": {
     "parentOrigin": "http://localhost:8080",
-    "pageTitle": "Amplelabs Bot",
+    "pageTitle": "Amplelabot",
     "toolbarTitle": "Find me a meal"
   },
   "recorder": {

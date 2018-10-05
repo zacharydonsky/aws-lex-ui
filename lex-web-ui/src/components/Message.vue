@@ -239,8 +239,8 @@ export default {
 
 .message-bot .message-bubble {
   /* background-color: #FFEBEE; */ /* red-50 from material palette */
-  outline-color:#F1453D;
-  border:1px solid #F1453D
+  outline-color:red;
+  border:1px solid red
 }
 
 .message-human .message-bubble {
