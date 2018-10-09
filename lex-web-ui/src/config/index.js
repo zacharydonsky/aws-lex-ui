@@ -157,7 +157,7 @@ const configDefault = {
 
     // controls whether tags (e.g. SSML or HTML) should be stripped out
     // of bot messages received from Lex
-    stripTagsFromBotMessages: true,
+    stripTagsFromBotMessages: false,
 
     // controls whether detailed error messages are shown in bot responses
     showErrorDetails: false,
@@ -178,7 +178,7 @@ const configDefault = {
     // Make sure that the HTML message has been properly
     // escaped/encoded/filtered in the Lambda function
     // https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-    AllowSuperDangerousHTMLInMessage: false,
+    AllowSuperDangerousHTMLInMessage: true,
   },
 
   /* Configuration to enable voice and to pass options to the recorder

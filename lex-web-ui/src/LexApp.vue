@@ -76,7 +76,7 @@ export default {
   data() {
     return {
       favIcon: getFavIcon(),
-      pageTitle: 'AmpleLabs Bot',
+      pageTitle: 'Chalmers, from AmpleLabs',
     };
   },
 };

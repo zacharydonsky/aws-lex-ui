@@ -10,16 +10,16 @@
     v-html="altHtmlMessage"
     class="message-text"
   ></div>
-  <div
+  <!-- div
     v-else-if="message.text && shouldRenderAsHtml"
     v-html="botMessageAsHtml"
     class="message-text"
-  ></div>
+  ></div -->
   <div
     v-else-if="message.text && message.type === 'bot'"
     class="message-text"
   >
-    {{ (shouldStripTags) ? stripTagsFromMessage(message.text) : message.text }}
+  <p><span v-html="message.text"></span></p>
   </div>
 </template>
 
@@ -49,13 +49,15 @@ export default {
   props: ['message'],
   computed: {
     shouldConvertUrlToLinks() {
-      return this.$store.state.config.ui.convertUrlToLinksInBotMessages;
+      // eslint-disable-next-line
+      // console.log(this.message.text);
+      return true; // this.$store.state.config.ui.convertUrlToLinksInBotMessages;
     },
     shouldStripTags() {
-      return this.$store.state.config.ui.stripTagsFromBotMessages;
+      return false; // this.$store.state.config.ui.stripTagsFromBotMessages;
     },
     AllowSuperDangerousHTMLInMessage() {
-      return this.$store.state.config.ui.AllowSuperDangerousHTMLInMessage;
+      return true; // this.$store.state.config.ui.AllowSuperDangerousHTMLInMessage;
     },
     altHtmlMessage() {
       let out = false;
@@ -74,9 +76,10 @@ export default {
     botMessageAsHtml() {
       // Security Note: Make sure that the content is escaped according
       // to context (e.g. URL, HTML). This is rendered as HTML
-      const messageText = this.stripTagsFromMessage(this.message.text);
+      const messageText = this.message.text; // this.stripTagsFromMessage(this.message.text);
       const messageWithLinks = this.botMessageWithLinks(messageText);
       return messageWithLinks;
+      // return 'rawHtml';
     },
   },
   methods: {

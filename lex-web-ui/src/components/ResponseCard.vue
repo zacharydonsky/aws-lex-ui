@@ -66,11 +66,23 @@ export default {
     };
   },
   computed: {
+    // phoneNumber() {
+    //   return matchPhoneNumber(str);
+    // },
     imageUrl() {
       return `'${this.responseCard.imageUrl}'`;
     },
   },
   methods: {
+    /*
+    matchPhoneNumber(str) {
+      // eslint-disable-next-line
+      const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+      // eslint-disable-next-line
+      console.log(str.match(regex));
+      return str.match(regex);
+    },
+    */
     getUrl(c) {
       return c.imageUrl;
     },

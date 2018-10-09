@@ -4,8 +4,8 @@
   },
   "lex": {
     "botName": "AmplelabsBot",
-    "initialText": "Hey there, just say \"find me a meal\" to start, or  \"help\" if you are lost.",
-    "initialSpeechInstruction": "Say 'Find me a meal' to get started."
+    "initialText": "Hi there, my name is Chalmers. How can I help you today? You can ask me questions like  \"I’m looking for a free meal\", or  \"where is the closest drop-in from here?\"",
+    "initialSpeechInstruction": "Say 'I’m looking for a free meal' to get started."
   },
   "polly": {
     "voiceId": "Matthew"
