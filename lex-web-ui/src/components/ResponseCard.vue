@@ -1,5 +1,5 @@
 <template>
-  <v-card flat>
+  <v-card flat class="grey lighten-5">
     <!-- v-card-title v-if="responseCard.title.trim()" primary-title class="red lighten-5">
       <span class="headline">{{responseCard.title}}</span>
     </v-card-title>
