@@ -27,7 +27,8 @@
         {{button.text}}
       </v-btn>
     </v-card-actions -->
-    <v-card-actions v-if="responseCard.attachmentLinkUrl">
+    <br/>
+    <v-card-actions v-if="responseCard.attachmentLinkUrl && displayLinkCaption()">
       <div style="align-items: center">
       <v-btn
         outline
@@ -37,7 +38,7 @@
         v-bind:href="responseCard.attachmentLinkUrl"
         target="_blank"
       >
-        Open Link
+        {{responseCard.subTitle}}
       </v-btn>
       </div>
     </v-card-actions>
@@ -62,27 +63,26 @@ export default {
   props: ['response-card'],
   data() {
     return {
+      subTitle: null,
       hasButtonBeenClicked: false,
     };
   },
   computed: {
-    // phoneNumber() {
-    //   return matchPhoneNumber(str);
-    // },
     imageUrl() {
       return `'${this.responseCard.imageUrl}'`;
     },
   },
   methods: {
-    /*
-    matchPhoneNumber(str) {
+    displayLinkCaption() {
+      if (this.subTitle === null
+        || this.subTitle === undefined
+        || typeof (this.subTitle) !== 'string') {
+        return false;
+      }
+      const len = this.subTitle.length;
       // eslint-disable-next-line
-      const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-      // eslint-disable-next-line
-      console.log(str.match(regex));
-      return str.match(regex);
+      return len === 0 ? false : true;
     },
-    */
     getUrl(c) {
       return c.imageUrl;
     },
@@ -95,6 +95,11 @@ export default {
 
       this.$store.dispatch('postTextMessage', message);
     },
+  },
+  mounted() {
+    // eslint-disable-next-line
+    this.subTitle = this.responseCard.subTitle;
+    // console.log(this.responseCard.subTitle);
   },
 };
 </script>

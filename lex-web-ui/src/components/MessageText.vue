@@ -19,7 +19,7 @@
     v-else-if="message.text && message.type === 'bot'"
     class="message-text"
   >
-  <p><span v-html="message.text"></span></p>
+  <span v-html="message.text"></span>
   </div>
 </template>
 
