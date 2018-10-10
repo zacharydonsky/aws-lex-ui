@@ -21,4 +21,5 @@ export default {
   isMicQuiet: state => state.recState.isMicQuiet,
   isRecorderSupported: state => state.recState.isRecorderSupported,
   isRecording: state => state.recState.isRecording,
+  messageReverse: state => state.messages,
 };

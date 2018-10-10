@@ -306,7 +306,7 @@ export default {
    * Push new message into messages array
    */
   pushMessage(state, message) {
-    state.messages.push({
+    state.messages.reverse().push({
       id: state.messages.length,
       date: new Date(),
       ...message,

@@ -1,6 +1,7 @@
 <template>
   <v-layout
     column
+    reverse
     fill-height
     class="message-list"
   >
@@ -42,7 +43,7 @@ export default {
   },
   computed: {
     messages() {
-      return this.$store.state.messages;
+      return this.$store.state.messages.reverse();
     },
     loading() {
       return this.$store.state.lex.isProcessing;
@@ -50,9 +51,9 @@ export default {
   },
   watch: {
     // autoscroll message list to the bottom when messages change
-    messages() {
-      this.scrollDown();
-    },
+    // messages() {
+    //  this.scrollDown();
+    // },
   },
   methods: {
     scrollDown() {
